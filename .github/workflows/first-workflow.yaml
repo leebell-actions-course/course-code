@@ -25,4 +25,4 @@ jobs:
       - name: Run a windows command
         run: Write-Output "Windows string Hello, world!"
       - name: Error Step
-        run: doesnotexits
+        run: doesnotexitss

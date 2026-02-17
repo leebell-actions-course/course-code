@@ -13,4 +13,16 @@ jobs:
           node -v
           npm -v
           echo "multiple commands"
-
+  parallel-jobs-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View SW Version
+        run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: run-shell-commands
+    steps:
+      - name: Run a windows command
+        run: Write-Output "Windows string Hello, world!"
+      - name: Error Step
+        run: doesnotexits

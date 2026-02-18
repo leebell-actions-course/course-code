@@ -4,6 +4,8 @@ on:
     workflow_run:
         workflows: [Repository Events]
         types: [completed]
+        branches:   # will run only for main branch after Repository Events is completed
+            - main
 jobs:
     echo-string:
         runs-on: ubuntu-latest

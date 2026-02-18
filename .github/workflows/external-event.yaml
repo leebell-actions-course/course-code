@@ -1,9 +1,11 @@
 name: External Events
 on:
     repository_dispatch:    # This can only work in default branch(ie. main)
+        types: [build]      # only run when event_type matches type
 
 jobs:
     echo-a-string:
         runs-on: ubuntu-latest
         steps:
             - run: echo "Repository Dispatch"
+            - run: echo ${{ github.event.client_payload.env }}

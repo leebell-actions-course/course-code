@@ -1,0 +1,9 @@
+name: External Events
+on:
+    repository_dispatch:    # This can only work in default branch(ie. main)
+
+jobs:
+    echo-a-string:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Repository Dispatch"

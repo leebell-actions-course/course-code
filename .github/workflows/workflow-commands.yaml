@@ -7,5 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setting an error message
-        run: echo "::error::This is an error message"
-        
+        run: |
+          echo "::error::This is an error message"
+      - name: Setting an error message with params
+        run: echo "::error::title=Error Title,file=app.js,line=1,endLine=3,column=1,endColumn=3::My error message"
+      - name: Setting an debug message with params
+        run: echo "::debug::title=Debug Title,file=app.js,line=1,endLine=3,column=1,endColumn=3::My debug message"
+      - name: Setting an warning message with params
+        run: echo "::warning::title=Warning Title,file=app.js,line=1,endLine=3,column=1,endColumn=3::My warning message"
+      - name: Setting a notice message with params
+        run: echo "::notice::title=Notice Title,file=app.js,line=1,endLine=3,column=1,endColumn=3::My notice message"        

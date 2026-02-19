@@ -8,7 +8,7 @@ jobs:
     env-vars-and-context:
         runs-on: ubuntu-latest
         # run this job only if push to main branch (use context) Don't use reference 
-        if: github.ref == 'refs/head/main'
+        if: github.ref == 'refs/heads/main'
         env:
             JOB_LEVEL_ENV: Available to all steps in env-vars-and-context job
         steps:

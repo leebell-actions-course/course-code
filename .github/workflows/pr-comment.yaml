@@ -5,6 +5,9 @@ on:
 jobs:
     pr-comment:
         runs-on: ubuntu-latest
+        permissions:
+            # read, write or none
+            issues: read
         steps:
             - name: Comment on New PRs
               uses: actions/github-script@v6

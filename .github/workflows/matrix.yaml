@@ -4,7 +4,7 @@ on: [push]
 jobs:
     node-matrix:
         # Now this override fail-fast
-        continue-on-error: ${{ matrix.experimental == true }}
+        continue-on-error: ${{ matrix.experiment == true }}
         strategy:
             matrix:
                 os: [ubuntu-latest, windows-latest]
@@ -14,7 +14,7 @@ jobs:
                       is-ubuntu: true
                     - os: macos-latest
                       node-version: 18
-                    - experimental: false
+                    - experiment: false
                     - os: ubuntu-latest
                       node-version: 16
                       experiment: true

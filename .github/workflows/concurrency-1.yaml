@@ -11,6 +11,7 @@ on:
 # concurrency:
 #   group: ${{ github.workflow }}-${{ github.event.inputs.environment }}
 #   cancel-in-progress: true
+concurrency: concurrency-1
 jobs:
   sleep:
     runs-on: ubuntu-latest

@@ -8,6 +8,12 @@ on:
 
 
 jobs:
+    nested-workflow-call:
+        uses: leebell-actions-course/workflows/.github/workflows/reusable.yaml@main
+        with:
+            name: "Bill"
+        secrets:
+            access-token: ${{ secrets.ACCESS_TOKEN }}        
     generate-output:
         runs-on: ubuntu-latest
         outputs:
